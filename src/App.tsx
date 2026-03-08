@@ -11,6 +11,7 @@ export default function App() {
   const base = import.meta.env.BASE_URL;
   const [activeSection, setActiveSection] = useState('home');
   const [eduOpen, setEduOpen] = useState<string | null>('ms');
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,14 +38,44 @@ export default function App() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
   };
 
+  const navItems = ['home', 'about', 'portfolio', 'experience', 'education', 'outside', 'contact'];
+
   return (
     <div className="font-sans text-ink bg-white flex">
-      {/* SIDEBAR */}
+
+      {/* MOBILE TOP NAV */}
+      <div className="mobile-nav">
+        <a href="#home" className="mobile-nav-name">Lalitha <span>Lahari</span></a>
+        <button className={`hamburger ${menuOpen ? 'open' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      {/* MOBILE SLIDE MENU */}
+      <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
+        {navItems.map((item) => (
+          
+            key={item}
+            href={`#${item}`}
+            onClick={() => setMenuOpen(false)}
+            className={activeSection === item ? 'active' : ''}
+          >
+            {item === 'outside' ? 'Outside Work' : item.charAt(0).toUpperCase() + item.slice(1)}
+          </a>
+        ))}
+        <div className="mobile-menu-socials">
+          <a href="https://linkedin.com/in/lalithalaharikarri" target="_blank" rel="noreferrer"><Linkedin size={18} /></a>
+          <a href="https://github.com/llkarri" target="_blank" rel="noreferrer"><Github size={18} /></a>
+          <a href="https://www.instagram.com/lalithajournal_/" target="_blank" rel="noreferrer"><Instagram size={18} /></a>
+        </div>
+      </div>
+
+      {/* DESKTOP SIDEBAR */}
       <nav className="sidebar">
         <a href="#home" className="sidebar-name">Lalitha<br /><span>Lahari</span> Karri</a>
         <p className="sidebar-role">Business Analyst</p>
         <ul className="sidebar-links">
-          {['home', 'about', 'portfolio', 'experience', 'education', 'outside', 'contact'].map((item) => (
+          {navItems.map((item) => (
             <li key={item}>
               <a href={`#${item}`} className={activeSection === item ? 'active' : ''}>
                 {item === 'outside' ? 'Outside Work' : item.charAt(0).toUpperCase() + item.slice(1)}
@@ -288,10 +319,12 @@ export default function App() {
               </div>
             </motion.div>
             <motion.div className="contact-form" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} transition={{ delay: 0.2 }}>
-              <div className="f-field"><input type="text" placeholder="Your Name"/></div>
-              <div className="f-field"><input type="email" placeholder="Your Email"/></div>
-              <div className="f-field"><textarea placeholder="Your Message"></textarea></div>
-              <button className="btn-send">Send Message →</button>
+              <form action="https://formspree.io/f/YOUR_CODE_HERE" method="POST">
+                <div className="f-field"><input type="text" name="name" placeholder="Your Name" required /></div>
+                <div className="f-field"><input type="email" name="email" placeholder="Your Email" required /></div>
+                <div className="f-field"><textarea name="message" placeholder="Your Message" required></textarea></div>
+                <button type="submit" className="btn-send">Send Message →</button>
+              </form>
             </motion.div>
           </div>
         </section>
@@ -308,3 +341,10 @@ export default function App() {
     </div>
   );
 }
+```
+
+---
+
+⚠️ **One thing to do** — replace `YOUR_CODE_HERE` in this line with your actual Formspree code:
+```
+action="https://formspree.io/f/xgonvjkl"
