@@ -8,6 +8,7 @@ import { motion } from 'motion/react';
 import { Linkedin, Github, Instagram, Mail, MapPin } from 'lucide-react';
 
 export default function App() {
+  const base = import.meta.env.BASE_URL;
   const [activeSection, setActiveSection] = useState('home');
   const [eduOpen, setEduOpen] = useState<string | null>('ms');
 
@@ -45,56 +46,31 @@ export default function App() {
         <ul className="sidebar-links">
           {['home', 'about', 'portfolio', 'experience', 'education', 'outside', 'contact'].map((item) => (
             <li key={item}>
-              <a 
-                href={`#${item}`} 
-                className={activeSection === item ? 'active' : ''}
-              >
+              <a href={`#${item}`} className={activeSection === item ? 'active' : ''}>
                 {item === 'outside' ? 'Outside Work' : item.charAt(0).toUpperCase() + item.slice(1)}
               </a>
             </li>
           ))}
         </ul>
         <div className="sidebar-socials">
-          <a href="https://linkedin.com/in/lalithalaharikarri" target="_blank" rel="noreferrer" title="LinkedIn">
-            <Linkedin size={18} />
-          </a>
-          <a href="https://github.com/llkarri" target="_blank" rel="noreferrer" title="GitHub">
-            <Github size={18} />
-          </a>
-          <a href="https://www.instagram.com/lalithajournal_/" target="_blank" rel="noreferrer" title="Instagram">
-            <Instagram size={18} />
-          </a>
+          <a href="https://linkedin.com/in/lalithalaharikarri" target="_blank" rel="noreferrer" title="LinkedIn"><Linkedin size={18} /></a>
+          <a href="https://github.com/llkarri" target="_blank" rel="noreferrer" title="GitHub"><Github size={18} /></a>
+          <a href="https://www.instagram.com/lalithajournal_/" target="_blank" rel="noreferrer" title="Instagram"><Instagram size={18} /></a>
         </div>
       </nav>
 
       <main>
         {/* HOME */}
         <section id="home">
-          <motion.div 
-            className="home-left"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-          >
+          <motion.div className="home-left" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
             <span className="home-name">Hi, I'm Lalitha</span>
             <div className="home-cta">
-              <a href="/resume.pdf" download className="btn-primary">↓ &nbsp;Download Resume</a>
+              <a href={base + "resume.pdf"} download className="btn-primary">↓ &nbsp;Download Resume</a>
             </div>
           </motion.div>
-          <motion.div 
-            className="home-right"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.2 }}
-          >
+          <motion.div className="home-right" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 1, delay: 0.2 }}>
             <div className="hero-photo-frame">
-              <img 
-                src="/lalitha.jpg" 
-                alt="Lalitha Lahari Karri" 
-                referrerPolicy="no-referrer"
-              />
+              <img src={base + "lalitha.jpg"} alt="Lalitha Lahari Karri" />
             </div>
           </motion.div>
         </section>
@@ -104,23 +80,16 @@ export default function App() {
           <p className="eyebrow">About Me</p>
           <h2 className="section-title">Who Am I?</h2>
           <hr className="rule" />
-          <motion.div 
-            className="about-body"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-          >
-            <p>I’ve always been fascinated by the story hidden within the numbers. For me, data isn't just rows and columns—it's the voice of the user and the blueprint for smarter decisions.</p>
+          <motion.div className="about-body" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
+            <p>I've always been fascinated by the story hidden within the numbers. For me, data isn't just rows and columns—it's the voice of the user and the blueprint for smarter decisions.</p>
             <p>My journey started in engineering, teaching me to think in systems. During my three years at Accenture, I turned complex, messy datasets into clear narratives for leadership, driving real efficiency. But I wanted to do more than just report on the past; I wanted to shape the future.</p>
-            <p>Now, pursuing my MS in Business Analytics at UIUC, I’m bridging the gap between technical data analysis and product strategy. I build tools that don't just show data, but explain <em>why</em> it matters.</p>
-            
+            <p>Now, pursuing my MS in Business Analytics at UIUC, I'm bridging the gap between technical data analysis and product strategy. I build tools that don't just show data, but explain <em>why</em> it matters.</p>
             <div className="about-logos">
               <div className="logo-box" title="University of Illinois Urbana-Champaign">
-                <img src="/uiuc.jpg" alt="UIUC" />
+                <img src={base + "uiuc.jpg"} alt="UIUC" />
               </div>
               <div className="logo-box" title="Accenture">
-                <img src="/accenture.jpg" alt="Accenture" />
+                <img src={base + "accenture.jpg"} alt="Accenture" />
               </div>
             </div>
           </motion.div>
@@ -133,44 +102,24 @@ export default function App() {
           <hr className="rule" />
           <p className="portfolio-intro">Projects where analytics meets real-world impact. Click Read More to explore each write-up on Medium.</p>
           <div className="portfolio-grid">
-            <motion.div 
-              className="p-card"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-            >
-              <img src="/housing.jpg" alt="Housing Reviews" className="p-card-img" referrerPolicy="no-referrer"/>
+            <motion.div className="p-card" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
+              <img src={base + "housing.jpg"} alt="Housing Reviews" className="p-card-img" />
               <div className="p-card-body">
                 <h3 className="p-name">What 10,000 Housing Reviews Taught Me About Landlords</h3>
                 <a href="https://medium.com/@lalithalaharikarri/what-10-000-student-housing-reviews-taught-me-about-why-landlords-fail-015085cf113f" target="_blank" rel="noreferrer" className="p-read">Read More →</a>
               </div>
             </motion.div>
 
-            <motion.div 
-              className="p-card"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              transition={{ delay: 0.1 }}
-            >
-              <img src="/blockchain.jpg" alt="Blockchain Analysis" className="p-card-img" referrerPolicy="no-referrer"/>
+            <motion.div className="p-card" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} transition={{ delay: 0.1 }}>
+              <img src={base + "blockchain.jpg"} alt="Blockchain Analysis" className="p-card-img" />
               <div className="p-card-body">
                 <h3 className="p-name">60 Days of Blockchain Data: What USDT's Rivals Don't Want You to Know</h3>
                 <a href="https://medium.com/@lalithalaharikarri/i-queried-60-days-of-blockchain-data-heres-what-usdt-s-competitors-don-t-want-you-to-know-68c8b2943a54" target="_blank" rel="noreferrer" className="p-read">Read More →</a>
               </div>
             </motion.div>
 
-            <motion.div 
-              className="p-card"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              transition={{ delay: 0.2 }}
-            >
-              <img src="/cherie.webp" alt="Cherie AI Stylist" className="p-card-img" referrerPolicy="no-referrer"/>
+            <motion.div className="p-card" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} transition={{ delay: 0.2 }}>
+              <img src={base + "cherie.webp"} alt="Cherie AI Stylist" className="p-card-img" />
               <div className="p-card-body">
                 <h3 className="p-name">Cherie: Your AI-Powered Personal Stylist</h3>
                 <a href="https://medium.com/@lalithalaharikarri/cherie-your-ai-powered-personal-stylist-that-actually-knows-your-body-d884ad3a270d" target="_blank" rel="noreferrer" className="p-read">Read More →</a>
@@ -185,15 +134,9 @@ export default function App() {
           <h2 className="section-title">How have I made an <em>impact?</em></h2>
           <hr className="rule" />
           <div className="exp-list">
-            <motion.div 
-              className="exp-item"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-            >
+            <motion.div className="exp-item" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
               <div className="exp-logo">
-                <img src="/uiuc.jpg" alt="UIUC" style={{width: '100%', height: '100%', objectFit: 'contain'}} />
+                <img src={base + "uiuc.jpg"} alt="UIUC" style={{width: '100%', height: '100%', objectFit: 'contain'}} />
               </div>
               <div>
                 <p className="exp-period">Jan 2026 – Present</p>
@@ -207,16 +150,9 @@ export default function App() {
               </div>
             </motion.div>
 
-            <motion.div 
-              className="exp-item"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              transition={{ delay: 0.1 }}
-            >
+            <motion.div className="exp-item" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} transition={{ delay: 0.1 }}>
               <div className="exp-logo">
-                <img src="/accenture.jpg" alt="Accenture" style={{width: '100%', height: '100%', objectFit: 'contain'}} />
+                <img src={base + "accenture.jpg"} alt="Accenture" style={{width: '100%', height: '100%', objectFit: 'contain'}} />
               </div>
               <div>
                 <p className="exp-period">Aug 2024 – July 2025</p>
@@ -230,16 +166,9 @@ export default function App() {
               </div>
             </motion.div>
 
-            <motion.div 
-              className="exp-item"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              transition={{ delay: 0.2 }}
-            >
+            <motion.div className="exp-item" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} transition={{ delay: 0.2 }}>
               <div className="exp-logo">
-                <img src="/accenture.jpg" alt="Accenture" style={{width: '100%', height: '100%', objectFit: 'contain'}} />
+                <img src={base + "accenture.jpg"} alt="Accenture" style={{width: '100%', height: '100%', objectFit: 'contain'}} />
               </div>
               <div>
                 <p className="exp-period">Aug 2022 – July 2024</p>
@@ -304,57 +233,25 @@ export default function App() {
           <p className="eyebrow">Outside Work</p>
           <h2 className="section-title">What inspires me <em>beyond data?</em></h2>
           <hr className="rule" />
-          <motion.div 
-            className="outside-intro"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-          >
+          <motion.div className="outside-intro" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
             <p>I run <strong>@lalithajournal</strong> on Instagram — a community of <strong>5,000+ people</strong> navigating their careers in analytics. From internship resources to life as an international student, I share the real journey.</p>
             <p>I'm also a <strong>Global Educator</strong> with ISSS (International Student and Scholar Services), volunteering to represent my country and support international students in finding their footing. Outside of all this, you'll find me travelling and hosting events that bring people together.</p>
           </motion.div>
           <div className="outside-grid">
-            <motion.div 
-              className="o-card"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-            >
-              <img src="/giese.jpg" alt="ISSS Global Educator" referrerPolicy="no-referrer"/>
+            <motion.div className="o-card" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
+              <img src={base + "giese.jpg"} alt="ISSS Global Educator" />
               <div className="o-label">🌍 ISSS Global Educator</div>
             </motion.div>
-            <motion.div 
-              className="o-card"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              transition={{ delay: 0.1 }}
-            >
-              <img src="/beacons.jpg" alt="Instagram Community" referrerPolicy="no-referrer"/>
+            <motion.div className="o-card" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} transition={{ delay: 0.1 }}>
+              <img src={base + "beacons.jpg"} alt="Instagram Community" />
               <div className="o-label">📸 @lalithajournal · 5K+ Community</div>
             </motion.div>
-            <motion.div 
-              className="o-card"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              transition={{ delay: 0.2 }}
-            >
-              <img src="/travel.jpg" alt="Travel" referrerPolicy="no-referrer"/>
+            <motion.div className="o-card" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} transition={{ delay: 0.2 }}>
+              <img src={base + "travel.jpg"} alt="Travel" />
               <div className="o-label">✈️ Travel & Adventure</div>
             </motion.div>
           </div>
-          <motion.div 
-            style={{marginTop: '2rem', display: 'flex', gap: '1rem', flexWrap: 'wrap'}}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-          >
+          <motion.div style={{marginTop: '2rem', display: 'flex', gap: '1rem', flexWrap: 'wrap'}} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
             <a href="https://medium.com/@lalithalaharikarri" target="_blank" rel="noreferrer" className="btn-primary" style={{backgroundColor: '#1a1a1a'}}>✍️ &nbsp;Read on Medium</a>
           </motion.div>
         </section>
@@ -365,12 +262,7 @@ export default function App() {
           <h2 className="section-title">Let's start a <em>conversation!</em></h2>
           <hr className="rule" />
           <div className="contact-grid">
-            <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-            >
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
               <p className="contact-info-text">I'm always open to new opportunities, collaborations, or a good conversation about data and analytics. Drop me a message!</p>
               <div className="contact-links">
                 <a href="mailto:lalithalaharikarri@gmail.com" className="c-row">
@@ -395,14 +287,7 @@ export default function App() {
                 </div>
               </div>
             </motion.div>
-            <motion.div 
-              className="contact-form"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              transition={{ delay: 0.2 }}
-            >
+            <motion.div className="contact-form" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} transition={{ delay: 0.2 }}>
               <div className="f-field"><input type="text" placeholder="Your Name"/></div>
               <div className="f-field"><input type="email" placeholder="Your Email"/></div>
               <div className="f-field"><textarea placeholder="Your Message"></textarea></div>
