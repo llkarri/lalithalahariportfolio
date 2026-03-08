@@ -54,7 +54,7 @@ export default function App() {
       {/* MOBILE SLIDE MENU */}
       <div className={"mobile-menu " + (menuOpen ? 'open' : '')}>
         {navItems.map((item) => (
-          
+          <a
             key={item}
             href={"#" + item}
             onClick={() => setMenuOpen(false)}
