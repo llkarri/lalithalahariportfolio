@@ -96,7 +96,7 @@ export default function App() {
           <motion.div className="home-left" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
             <span className="home-name">Hi, I'm Lalitha</span>
             <div className="home-cta">
-              <a href={base + "resume.pdf"} download className="btn-primary">Down Resume</a>
+              <a href={base + "resume.pdf"} download className="btn-primary">Download Resume</a>
             </div>
           </motion.div>
           <motion.div className="home-right" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 1, delay: 0.2 }}>
