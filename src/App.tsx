@@ -46,17 +46,17 @@ export default function App() {
       {/* MOBILE TOP NAV */}
       <div className="mobile-nav">
         <a href="#home" className="mobile-nav-name">Lalitha <span>Lahari</span></a>
-        <button className={`hamburger ${menuOpen ? 'open' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
+        <button className={"hamburger " + (menuOpen ? 'open' : '')} onClick={() => setMenuOpen(!menuOpen)}>
           <span></span><span></span><span></span>
         </button>
       </div>
 
       {/* MOBILE SLIDE MENU */}
-      <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
+      <div className={"mobile-menu " + (menuOpen ? 'open' : '')}>
         {navItems.map((item) => (
           
             key={item}
-            href={`#${item}`}
+            href={"#" + item}
             onClick={() => setMenuOpen(false)}
             className={activeSection === item ? 'active' : ''}
           >
@@ -77,7 +77,7 @@ export default function App() {
         <ul className="sidebar-links">
           {navItems.map((item) => (
             <li key={item}>
-              <a href={`#${item}`} className={activeSection === item ? 'active' : ''}>
+              <a href={"#" + item} className={activeSection === item ? 'active' : ''}>
                 {item === 'outside' ? 'Outside Work' : item.charAt(0).toUpperCase() + item.slice(1)}
               </a>
             </li>
@@ -96,7 +96,7 @@ export default function App() {
           <motion.div className="home-left" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
             <span className="home-name">Hi, I'm Lalitha</span>
             <div className="home-cta">
-              <a href={base + "resume.pdf"} download className="btn-primary">↓ &nbsp;Download Resume</a>
+              <a href={base + "resume.pdf"} download className="btn-primary">Down Resume</a>
             </div>
           </motion.div>
           <motion.div className="home-right" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 1, delay: 0.2 }}>
@@ -137,7 +137,7 @@ export default function App() {
               <img src={base + "housing.jpg"} alt="Housing Reviews" className="p-card-img" />
               <div className="p-card-body">
                 <h3 className="p-name">What 10,000 Housing Reviews Taught Me About Landlords</h3>
-                <a href="https://medium.com/@lalithalaharikarri/what-10-000-student-housing-reviews-taught-me-about-why-landlords-fail-015085cf113f" target="_blank" rel="noreferrer" className="p-read">Read More →</a>
+                <a href="https://medium.com/@lalithalaharikarri/what-10-000-student-housing-reviews-taught-me-about-why-landlords-fail-015085cf113f" target="_blank" rel="noreferrer" className="p-read">Read More</a>
               </div>
             </motion.div>
 
@@ -145,7 +145,7 @@ export default function App() {
               <img src={base + "blockchain.jpg"} alt="Blockchain Analysis" className="p-card-img" />
               <div className="p-card-body">
                 <h3 className="p-name">60 Days of Blockchain Data: What USDT's Rivals Don't Want You to Know</h3>
-                <a href="https://medium.com/@lalithalaharikarri/i-queried-60-days-of-blockchain-data-heres-what-usdt-s-competitors-don-t-want-you-to-know-68c8b2943a54" target="_blank" rel="noreferrer" className="p-read">Read More →</a>
+                <a href="https://medium.com/@lalithalaharikarri/i-queried-60-days-of-blockchain-data-heres-what-usdt-s-competitors-don-t-want-you-to-know-68c8b2943a54" target="_blank" rel="noreferrer" className="p-read">Read More</a>
               </div>
             </motion.div>
 
@@ -153,7 +153,7 @@ export default function App() {
               <img src={base + "cherie.webp"} alt="Cherie AI Stylist" className="p-card-img" />
               <div className="p-card-body">
                 <h3 className="p-name">Cherie: Your AI-Powered Personal Stylist</h3>
-                <a href="https://medium.com/@lalithalaharikarri/cherie-your-ai-powered-personal-stylist-that-actually-knows-your-body-d884ad3a270d" target="_blank" rel="noreferrer" className="p-read">Read More →</a>
+                <a href="https://medium.com/@lalithalaharikarri/cherie-your-ai-powered-personal-stylist-that-actually-knows-your-body-d884ad3a270d" target="_blank" rel="noreferrer" className="p-read">Read More</a>
               </div>
             </motion.div>
           </div>
@@ -170,7 +170,7 @@ export default function App() {
                 <img src={base + "uiuc.jpg"} alt="UIUC" style={{width: '100%', height: '100%', objectFit: 'contain'}} />
               </div>
               <div>
-                <p className="exp-period">Jan 2026 – Present</p>
+                <p className="exp-period">Jan 2026 - Present</p>
                 <h3 className="exp-role">Multimedia Analyst</h3>
                 <p className="exp-co">University of Illinois Urbana-Champaign</p>
                 <ul className="exp-bullets">
@@ -186,9 +186,9 @@ export default function App() {
                 <img src={base + "accenture.jpg"} alt="Accenture" style={{width: '100%', height: '100%', objectFit: 'contain'}} />
               </div>
               <div>
-                <p className="exp-period">Aug 2024 – July 2025</p>
+                <p className="exp-period">Aug 2024 - July 2025</p>
                 <h3 className="exp-role">BI Engineer</h3>
-                <p className="exp-co">Accenture · Bengaluru, India</p>
+                <p className="exp-co">Accenture - Bengaluru, India</p>
                 <ul className="exp-bullets">
                   <li>Collaborated with Data Engineering teams to clean and analyze 500K+ operational records, achieving 99% accuracy for business reviews.</li>
                   <li>Developed interactive Tableau dashboards tracking key business metrics, directly supporting leadership in identifying performance trends and saving $500K+ in costs.</li>
@@ -202,9 +202,9 @@ export default function App() {
                 <img src={base + "accenture.jpg"} alt="Accenture" style={{width: '100%', height: '100%', objectFit: 'contain'}} />
               </div>
               <div>
-                <p className="exp-period">Aug 2022 – July 2024</p>
+                <p className="exp-period">Aug 2022 - July 2024</p>
                 <h3 className="exp-role">Data Analyst</h3>
-                <p className="exp-co">Accenture · Bengaluru, India</p>
+                <p className="exp-co">Accenture - Bengaluru, India</p>
                 <ul className="exp-bullets">
                   <li>Designed robust SQL pipelines to transform raw data into analysis-ready datasets, reducing analytics turnaround time by 35%.</li>
                   <li>Automated data cleaning workflows using Python, eliminating manual entry errors by 90% and boosting process efficiency for the analytics team.</li>
@@ -222,33 +222,33 @@ export default function App() {
           <h2 className="section-title">Where did I build my <em>foundation?</em></h2>
           <hr className="rule" />
           <div className="edu-list">
-            <div className={`edu-accordion ${eduOpen === 'ms' ? 'open' : ''}`}>
+            <div className={"edu-accordion " + (eduOpen === 'ms' ? 'open' : '')}>
               <div className="edu-header" onClick={() => toggleEdu('ms')}>
                 <span className="edu-header-text">Master of Science in Business Analytics</span>
-                <span className="edu-toggle">{eduOpen === 'ms' ? '−' : '+'}</span>
+                <span className="edu-toggle">{eduOpen === 'ms' ? '-' : '+'}</span>
               </div>
               <div className="edu-body">
                 <div className="edu-content">
                   <div className="edu-degree">MS Business Analytics</div>
-                  <div className="edu-period">Aug 2025 – Dec 2026 · University of Illinois Urbana-Champaign, IL</div>
+                  <div className="edu-period">Aug 2025 - Dec 2026 - University of Illinois Urbana-Champaign, IL</div>
                   <div className="edu-detail">
                     <strong>Coursework</strong>
-                    Marketing Analytics · Product Development · Enterprise Database Management · Data Analytics · Decision Analytics · Data Storytelling · Project Management
+                    Marketing Analytics - Product Development - Enterprise Database Management - Data Analytics - Decision Analytics - Data Storytelling - Project Management
                   </div>
-                  <div className="honor-badge">🏆 Gies Scholar Recipient</div>
+                  <div className="honor-badge">Gies Scholar Recipient</div>
                 </div>
               </div>
             </div>
 
-            <div className={`edu-accordion ${eduOpen === 'bs' ? 'open' : ''}`}>
+            <div className={"edu-accordion " + (eduOpen === 'bs' ? 'open' : '')}>
               <div className="edu-header" onClick={() => toggleEdu('bs')}>
-                <span className="edu-header-text">B.S. Electrical &amp; Electronics Engineering</span>
-                <span className="edu-toggle">{eduOpen === 'bs' ? '−' : '+'}</span>
+                <span className="edu-header-text">B.S. Electrical and Electronics Engineering</span>
+                <span className="edu-toggle">{eduOpen === 'bs' ? '-' : '+'}</span>
               </div>
               <div className="edu-body">
                 <div className="edu-content">
-                  <div className="edu-degree">B.S. Electrical &amp; Electronics Engineering</div>
-                  <div className="edu-period">June 2019 – May 2022 · Sathyabama University, Chennai, India</div>
+                  <div className="edu-degree">B.S. Electrical and Electronics Engineering</div>
+                  <div className="edu-period">June 2019 - May 2022 - Sathyabama University, Chennai, India</div>
                   <div className="edu-detail">
                     <strong>Foundation</strong>
                     An engineering mindset that fuels rigorous, systems-level thinking across every data problem I tackle.
@@ -271,19 +271,19 @@ export default function App() {
           <div className="outside-grid">
             <motion.div className="o-card" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
               <img src={base + "giese.jpg"} alt="ISSS Global Educator" />
-              <div className="o-label">🌍 ISSS Global Educator</div>
+              <div className="o-label">ISSS Global Educator</div>
             </motion.div>
             <motion.div className="o-card" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} transition={{ delay: 0.1 }}>
               <img src={base + "beacons.jpg"} alt="Instagram Community" />
-              <div className="o-label">📸 @lalithajournal · 5K+ Community</div>
+              <div className="o-label">@lalithajournal 5K+ Community</div>
             </motion.div>
             <motion.div className="o-card" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} transition={{ delay: 0.2 }}>
               <img src={base + "travel.jpg"} alt="Travel" />
-              <div className="o-label">✈️ Travel & Adventure</div>
+              <div className="o-label">Travel and Adventure</div>
             </motion.div>
           </div>
           <motion.div style={{marginTop: '2rem', display: 'flex', gap: '1rem', flexWrap: 'wrap'}} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
-            <a href="https://medium.com/@lalithalaharikarri" target="_blank" rel="noreferrer" className="btn-primary" style={{backgroundColor: '#1a1a1a'}}>✍️ &nbsp;Read on Medium</a>
+            <a href="https://medium.com/@lalithalaharikarri" target="_blank" rel="noreferrer" className="btn-primary" style={{backgroundColor: '#1a1a1a'}}>Read on Medium</a>
           </motion.div>
         </section>
 
@@ -319,18 +319,18 @@ export default function App() {
               </div>
             </motion.div>
             <motion.div className="contact-form" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} transition={{ delay: 0.2 }}>
-              <form action="https://formspree.io/f/YOUR_CODE_HERE" method="POST">
+              <form action="https://formspree.io/f/xgonvjkl" method="POST">
                 <div className="f-field"><input type="text" name="name" placeholder="Your Name" required /></div>
                 <div className="f-field"><input type="email" name="email" placeholder="Your Email" required /></div>
                 <div className="f-field"><textarea name="message" placeholder="Your Message" required></textarea></div>
-                <button type="submit" className="btn-send">Send Message →</button>
+                <button type="submit" className="btn-send">Send Message</button>
               </form>
             </motion.div>
           </div>
         </section>
 
         <footer>
-          <p className="footer-copy">© 2026 Lalitha Lahari Karri · Champaign, IL</p>
+          <p className="footer-copy">2026 Lalitha Lahari Karri - Champaign, IL</p>
           <div className="footer-links">
             <a href="https://linkedin.com/in/lalithalaharikarri" target="_blank" rel="noreferrer">LinkedIn</a>
             <a href="https://github.com/llkarri" target="_blank" rel="noreferrer">GitHub</a>
@@ -341,10 +341,3 @@ export default function App() {
     </div>
   );
 }
-```
-
----
-
-⚠️ **One thing to do** — replace `YOUR_CODE_HERE` in this line with your actual Formspree code:
-```
-action="https://formspree.io/f/xgonvjkl"
