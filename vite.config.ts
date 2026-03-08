@@ -4,6 +4,7 @@ import path from 'path';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+  base: '/lalithalahariportfolio/',
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
@@ -11,3 +12,12 @@ export default defineConfig({
     },
   },
 });
+```
+
+4. Click **"Commit changes"**
+
+---
+
+Then wait ~2 minutes and go to:
+```
+https://llkarri.github.io/lalithalahariportfolio/
