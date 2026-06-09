@@ -81,20 +81,26 @@ const PROJECTS = [
 
 const EXPERIENCE = [
   {
-    role: 'Data Analyst, Decision Support & Business Intelligence',
+    role: 'Business Intelligence Analyst',
     org: 'University of Illinois Urbana-Champaign',
     sub: 'Office of the Provost · Champaign, IL',
-    period: 'Jan 2026 – Present',
+    period: 'Jan 2026 – May 2026',
+    logoImg: 'uiuc.jpg',
+    logoInitials: 'UI',
+    logoBg: '#e8700a',
     bullets: [
-      'Built and managed reporting workflows across 20+ institutional partners, bringing structure to a fragmented system tracking outcomes for 55,000+ students.',
-      'Designed a centralized knowledge base that kept complex multi-stakeholder reporting cycles on track and cut documentation search time across the team.',
+      'Developed a Student Success Scorecard in Tableau, giving deans and academic officers a real-time view of student outcomes across 55,000+ records.',
+      'Built and maintained reporting workflows across 20+ institutional partners, bringing structure and consistency to a fragmented data ecosystem.',
     ],
   },
   {
     role: 'Growth Coach, BUS 401',
     org: 'University of Illinois Urbana-Champaign',
     sub: 'Champaign, IL',
-    period: '2025 – Present',
+    period: '2026 – Present',
+    logoImg: 'uiuc.jpg',
+    logoInitials: 'UI',
+    logoBg: '#e8700a',
     bullets: [
       'Coached 5 to 15 students per weekly small-group session, turning scattered career anxiety into organized, strategic job search plans with real momentum.',
       'Designed discussion guides and tracked attendance and grade trends that kept the program running smoothly and students on course across the full semester.',
@@ -105,6 +111,9 @@ const EXPERIENCE = [
     org: '@lalithajournal',
     sub: '5,000+ Community · Remote',
     period: '2025 – Present',
+    logoImg: null,
+    logoInitials: 'LJ',
+    logoBg: '#e07654',
     bullets: [
       'Grew an Instagram community from 0 to 5,000+ by creating Notion templates and AI workflow content that made career navigation feel simple and actionable.',
       'Completed 550+ coaching calls on Topmate, helping international students gain clarity on tech careers, visa timelines, and navigating life after graduation.',
@@ -112,30 +121,39 @@ const EXPERIENCE = [
     ],
   },
   {
-    role: 'Global Educator & Tech Accessibility Advocate',
-    org: 'University of Illinois Urbana-Champaign, ISSS',
+    role: 'Tech Accessibility Advocate',
+    org: 'UIUC, ISSS',
     sub: 'Champaign, IL',
     period: '2025 – Present',
+    logoImg: 'uiuc.jpg',
+    logoInitials: 'UI',
+    logoBg: '#e8700a',
     bullets: [
       'Ran accessible AI workshops for STEM faculty, translating intimidating tools into beginner-friendly systems that instructors could adopt immediately.',
       'Built Notion course workspaces that gave instructors one clear source of truth, eliminating the chaos of scattered course materials across multiple platforms.',
     ],
   },
   {
-    role: 'BI Engineer',
+    role: 'Business Intelligence Analyst',
     org: 'Accenture',
     sub: 'Bengaluru, India',
     period: 'Aug 2024 – Jul 2025',
+    logoImg: 'accenture.jpg',
+    logoInitials: 'AC',
+    logoBg: '#a100ff',
     bullets: [
       'Designed Tableau dashboards that surfaced $500K+ in cost opportunities and gave leadership a reliable view of business performance for the first time.',
       'Validated and cleaned 500K+ operational records at 99% accuracy, cutting reporting discrepancies by 40% across the entire analytics team.',
     ],
   },
   {
-    role: 'Data Analyst',
+    role: 'Data Engineer Associate',
     org: 'Accenture',
     sub: 'Bengaluru, India',
     period: 'Aug 2022 – Jul 2024',
+    logoImg: 'accenture.jpg',
+    logoInitials: 'AC',
+    logoBg: '#a100ff',
     bullets: [
       'Rebuilt SQL pipelines from scratch, reducing analytics turnaround by 35% and ending the weekly scramble for clean, query-ready data.',
       'Led a full migration of 700+ reports from QlikView to Tableau, achieving 99.9% accuracy and cutting manual workflow overhead by 40%.',
@@ -147,14 +165,14 @@ const AWARDS = [
   {
     title: '1st Place — CPRBS Case Competition',
     org: 'University of Illinois Urbana-Champaign',
-    year: '2025',
+    year: '2026',
     desc: 'Led a cross-functional team of 5 to redesign a 0% adoption sustainability dashboard into an AI-powered platform. Pitched to a panel of industry judges and won first place.',
     icon: '🏆',
   },
   {
     title: 'Best Project & Best Speaker Award',
     org: 'University of Illinois Urbana-Champaign',
-    year: '2025',
+    year: '2026',
     desc: 'Scored 83/84 for the SomnoMask product concept — recognized for both the quality of the product case and the strength of the investor pitch delivery.',
     icon: '🎤',
   },
@@ -294,12 +312,15 @@ export default function App() {
                 <p style={{ fontSize: '0.92rem', fontWeight: 400, color: NAVY, lineHeight: 1.9, fontStyle: 'italic' }}>
                   I believe the best products are built by people who speak both languages: data and design thinking. That's the space I live in.
                 </p>
-                <div style={{ display: 'flex', gap: '1.2rem', marginTop: '2rem', alignItems: 'center' }}>
-                  <div className="logo-box" style={{ height: '52px', width: '80px' }}>
-                    <img src={`${BASE}uiuc.jpg`} alt="UIUC" />
-                  </div>
-                  <div className="logo-box" style={{ height: '52px', width: '80px' }}>
-                    <img src={`${BASE}accenture.jpg`} alt="Accenture" />
+                <div style={{ marginTop: '2rem' }}>
+                  <p style={{ fontSize: '0.6rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: MUTED, marginBottom: '1rem', fontWeight: 500 }}>Where I've worked</p>
+                  <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
+                    <div className="logo-box" style={{ height: '40px', width: '90px' }}>
+                      <img src={`${BASE}uiuc.jpg`} alt="UIUC" />
+                    </div>
+                    <div className="logo-box" style={{ height: '40px', width: '90px' }}>
+                      <img src={`${BASE}accenture.jpg`} alt="Accenture" />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -388,28 +409,38 @@ export default function App() {
             <p className="eyebrow">Experience</p>
             <h2 className="section-title">How I've made an <em>impact.</em></h2>
             <hr className="rule" />
-            <div className="exp-timeline">
+            <div className="tl-wrap">
+              <div className="tl-line" />
               {EXPERIENCE.map((exp, i) => (
                 <motion.div
-                  key={exp.role}
-                  className="exp-row"
-                  initial="hidden"
-                  whileInView="visible"
+                  key={exp.role + exp.period}
+                  className="tl-item"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.45, delay: i * 0.06 } } }}
-                  style={{ borderBottom: i < EXPERIENCE.length - 1 ? `1px solid ${BORDER}` : 'none' }}
+                  transition={{ duration: 0.45, delay: i * 0.07 }}
                 >
-                  <div className="exp-period-col">
-                    <p style={{ fontSize: '0.62rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: SKY, fontWeight: 500 }}>{exp.period}</p>
-                    <p style={{ fontSize: '0.7rem', color: MUTED, marginTop: '0.25rem', lineHeight: 1.4 }}>{exp.sub}</p>
+                  {/* Logo circle */}
+                  <div className="tl-logo" style={{ background: exp.logoImg ? '#fff' : exp.logoBg }}>
+                    {exp.logoImg
+                      ? <img src={`${BASE}${exp.logoImg}`} alt={exp.org} style={{ width: '100%', height: '100%', objectFit: 'contain', padding: '6px' }} />
+                      : <span style={{ color: '#fff', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.03em' }}>{exp.logoInitials}</span>
+                    }
                   </div>
-                  <div>
-                    <h3 style={{ fontFamily: 'var(--serif)', fontSize: '1.15rem', fontWeight: 600, color: INK, marginBottom: '0.15rem', lineHeight: 1.2 }}>{exp.role}</h3>
-                    <p style={{ fontSize: '0.78rem', color: MUTED, marginBottom: '0.75rem' }}>{exp.org}</p>
-                    <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
+
+                  {/* Card */}
+                  <div className="tl-card">
+                    <div className="tl-card-header">
+                      <div>
+                        <h3 style={{ fontFamily: 'var(--serif)', fontSize: '1.1rem', fontWeight: 600, color: INK, lineHeight: 1.25, marginBottom: '0.2rem' }}>{exp.org}</h3>
+                        <p style={{ fontSize: '0.78rem', color: MUTED, marginBottom: '0.15rem' }}>{exp.role}</p>
+                        <p style={{ fontSize: '0.62rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: SKY, fontWeight: 500 }}>{exp.period} · {exp.sub}</p>
+                      </div>
+                    </div>
+                    <ul style={{ listStyle: 'none', padding: 0, marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.55rem' }}>
                       {exp.bullets.map((b, bi) => (
-                        <li key={bi} style={{ fontSize: '0.8rem', fontWeight: 300, color: MID, lineHeight: 1.7, paddingLeft: '0.9rem', position: 'relative' }}>
-                          <span style={{ position: 'absolute', left: 0, color: SKY, fontSize: '1.1rem', lineHeight: '1.4' }}>·</span>
+                        <li key={bi} style={{ fontSize: '0.8rem', fontWeight: 300, color: MID, lineHeight: 1.75, paddingLeft: '1rem', position: 'relative' }}>
+                          <span style={{ position: 'absolute', left: 0, color: INDIGO, fontWeight: 600 }}>›</span>
                           {b}
                         </li>
                       ))}
@@ -548,6 +579,39 @@ export default function App() {
               </motion.div>
               <motion.div className="o-card" whileHover={{ y: -5 }} transition={{ duration: 0.2 }}>
                 <img src={`${BASE}beacons.jpg`} alt="Community" />
+                {/* Topmate badges overlay */}
+                <div style={{
+                  position: 'absolute',
+                  top: '10px',
+                  left: '10px',
+                  right: '10px',
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  gap: '5px',
+                }}>
+                  {[
+                    { label: 'Top 0.1%', bg: '#1a6b3a', emoji: '🍀' },
+                    { label: 'Host Worthy', bg: '#1a3a6b', emoji: '🌸' },
+                    { label: 'Community Care', bg: '#1a5a6b', emoji: '💙' },
+                    { label: "People's Choice", bg: '#6b1a4a', emoji: '💗' },
+                  ].map(b => (
+                    <span key={b.label} style={{
+                      background: b.bg,
+                      color: '#fff',
+                      fontSize: '0.55rem',
+                      fontWeight: 600,
+                      padding: '3px 7px',
+                      borderRadius: '6px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '3px',
+                      backdropFilter: 'blur(4px)',
+                      letterSpacing: '0.02em',
+                    }}>
+                      {b.emoji} {b.label}
+                    </span>
+                  ))}
+                </div>
                 <div className="o-label">@lalithajournal · 5K+ Community</div>
               </motion.div>
               <motion.div className="o-card" whileHover={{ y: -5 }} transition={{ duration: 0.2 }}>
