@@ -296,46 +296,34 @@ export default function App() {
         </section>
 
         {/* ── ABOUT ── */}
-        <section id="about" style={{ background: 'linear-gradient(135deg, #eef4fb 0%, #f5f8ff 40%, #fdf0ec 100%)', padding: '5rem clamp(1.5rem, 7vw, 6rem)' }}>
+        <section id="about" style={{ background: '#fff', padding: '5rem clamp(1.5rem, 7vw, 6rem)' }}>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
             <p className="eyebrow">About Me</p>
-            <h2 className="section-title">Analyst. Builder. <em>Community Maker.</em></h2>
+            <h2 className="section-title">Who Am I?</h2>
             <hr className="rule" />
-            <div className="about-grid">
-              <div>
-                <p style={{ fontSize: '0.92rem', fontWeight: 300, color: MID, lineHeight: 1.9, marginBottom: '1.1rem' }}>
-                  I started in engineering, moved into data at Accenture where I spent 3 years turning 500K+ messy records into dashboards that saved $500K+. Somewhere along the way I realized I was more excited about <em>why</em> a product existed than how its data flowed.
-                </p>
-                <p style={{ fontSize: '0.92rem', fontWeight: 300, color: MID, lineHeight: 1.9, marginBottom: '1.1rem' }}>
-                  Now at UIUC Gies, I'm a Growth Coach, a Global Educator, and building a 5,000+ community that teaches real students how to navigate careers with AI and intentionality. My projects span product strategy, analytics, and everything in between.
-                </p>
-                <p style={{ fontSize: '0.92rem', fontWeight: 400, color: NAVY, lineHeight: 1.9, fontStyle: 'italic' }}>
-                  I believe the best products are built by people who speak both languages: data and design thinking. That's the space I live in.
-                </p>
-                <div style={{ marginTop: '2rem' }}>
-                  <p style={{ fontSize: '0.6rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: MUTED, marginBottom: '1rem', fontWeight: 500 }}>Where I've worked</p>
-                  <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
-                    <div className="logo-box" style={{ height: '40px', width: '90px' }}>
-                      <img src={`${BASE}uiuc.jpg`} alt="UIUC" />
-                    </div>
-                    <div className="logo-box" style={{ height: '40px', width: '90px' }}>
-                      <img src={`${BASE}accenture.jpg`} alt="Accenture" />
-                    </div>
+            <div style={{ maxWidth: '780px' }}>
+              <p style={{ fontSize: '1rem', lineHeight: 1.95, color: MID, marginBottom: '1.4rem' }}>
+                <strong style={{ color: INK, fontWeight: 600 }}>Hi, I'm Lalitha.</strong> A Business Analytics student at UIUC Gies with a background in data engineering and a drive to build products that actually make sense to the people who use them.
+              </p>
+              <p style={{ fontSize: '1rem', fontWeight: 300, color: MID, lineHeight: 1.95, marginBottom: '1.4rem' }}>
+                I spent 3 years at Accenture as a Data Engineer and Business Intelligence Analyst, working across messy, high-stakes data problems that needed both technical precision and clear communication to solve. That experience taught me how to turn complexity into clarity — and how good data decisions only matter when they're connected to the right product decisions.
+              </p>
+              <p style={{ fontSize: '1rem', fontWeight: 300, color: MID, lineHeight: 1.95, marginBottom: '1.4rem' }}>
+                Now at UIUC Gies, I'm studying Business Analytics, coaching students as a Growth Coach, advocating for tech accessibility, and building a community of people navigating the same crossroads I once stood at: smart, technical, and figuring out how to make it in product.
+              </p>
+              <p style={{ fontSize: '1rem', fontWeight: 400, color: NAVY, lineHeight: 1.95, fontStyle: 'italic', borderLeft: `3px solid ${SKY}`, paddingLeft: '1.2rem' }}>
+                I believe the best products are built by people who speak both languages: data and design thinking. That's the space I live in.
+              </p>
+              <div style={{ marginTop: '2.5rem' }}>
+                <p style={{ fontSize: '0.6rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: MUTED, marginBottom: '1rem', fontWeight: 500 }}>Where I've worked</p>
+                <div style={{ display: 'flex', gap: '2rem', alignItems: 'center', flexWrap: 'wrap' }}>
+                  <div className="logo-box" style={{ height: '38px', width: '88px' }}>
+                    <img src={`${BASE}uiuc.jpg`} alt="UIUC" />
+                  </div>
+                  <div className="logo-box" style={{ height: '38px', width: '88px' }}>
+                    <img src={`${BASE}accenture.jpg`} alt="Accenture" />
                   </div>
                 </div>
-              </div>
-              <div className="stats-grid">
-                {[
-                  { num: '5K+', label: 'Community Members' },
-                  { num: '2', label: 'Competition Awards' },
-                  { num: '3 yrs', label: 'Industry Experience' },
-                  { num: '7', label: 'Published Projects' },
-                ].map(stat => (
-                  <div key={stat.label} className="stat-card">
-                    <div style={{ fontFamily: 'var(--serif)', fontSize: '1.9rem', fontWeight: 600, color: INDIGO }}>{stat.num}</div>
-                    <div style={{ fontSize: '0.64rem', color: MUTED, letterSpacing: '0.08em', textTransform: 'uppercase', fontWeight: 500, marginTop: '0.2rem' }}>{stat.label}</div>
-                  </div>
-                ))}
               </div>
             </div>
           </motion.div>
