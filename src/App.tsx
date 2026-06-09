@@ -131,7 +131,64 @@ export default function App() {
           <p className="eyebrow">My Work</p>
           <h2 className="section-title">How do I turn data into <em>results?</em></h2>
           <hr className="rule" />
-          <p className="portfolio-intro">Projects where analytics meets real-world impact. Click Read More to explore each write-up on Medium.</p>
+          <p className="portfolio-intro">Projects spanning product management, analytics, and strategy. Click Read More to explore each write-up on Medium.</p>
+
+          {/* ── Product Management ── */}
+          <div className="portfolio-category">Product Management</div>
+          <div className="portfolio-grid">
+            <motion.div className="p-card" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
+              <img
+                src="https://miro.medium.com/v2/resize:fit:1200/1*NRtaE8lxe6dTMSa4OF62QQ.png"
+                alt="SomnoMask"
+                className="p-card-img"
+              />
+              <div className="p-card-body">
+                <span className="p-award">🏆 Best Project &amp; Best Speaker Award</span>
+                <h3 className="p-name">SomnoMask: Designing a Smart Sleep Mask for the 70 Million People the Market Forgot</h3>
+                <a href="https://medium.com/@lalithalaharikarri/somnomask-designing-a-smart-sleep-mask-for-the-70-million-people-the-market-forgot-0de4b84a8c31" target="_blank" rel="noreferrer" className="p-read">Read More</a>
+              </div>
+            </motion.div>
+
+            <motion.div className="p-card" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} transition={{ delay: 0.1 }}>
+              <img
+                src="https://miro.medium.com/v2/resize:fit:1200/1*smG-QcCxK6_zg1NezqPAAw.png"
+                alt="Dash4Earth"
+                className="p-card-img"
+              />
+              <div className="p-card-body">
+                <span className="p-award">🏆 1st Place — CPRBS Case Competition</span>
+                <h3 className="p-name">Dash4Earth: Sustainability Intelligence Platform</h3>
+                <a href="https://medium.com/@lalithalaharikarri/dash4earth-sustainability-case-competition-43fdd947f376" target="_blank" rel="noreferrer" className="p-read">Read More</a>
+              </div>
+            </motion.div>
+
+            <motion.div className="p-card" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} transition={{ delay: 0.2 }}>
+              <img
+                src="https://miro.medium.com/v2/resize:fit:1200/1*PhD2Y8GlDGEuYmBAvQNVKQ.png"
+                alt="AI Study Planner"
+                className="p-card-img"
+              />
+              <div className="p-card-body">
+                <h3 className="p-name">AI-Powered Study Planner with Canvas LMS Integration</h3>
+                <a href="https://medium.com/@lalithalaharikarri/ai-powered-study-planner-with-canvas-lms-integration-acee612f5813" target="_blank" rel="noreferrer" className="p-read">Read More</a>
+              </div>
+            </motion.div>
+
+            <motion.div className="p-card" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} transition={{ delay: 0.3 }}>
+              <img
+                src="https://miro.medium.com/v2/resize:fit:975/1*bXvG2xF34CIVqqkO9em3nQ.png"
+                alt="Lyrics Analysis"
+                className="p-card-img"
+              />
+              <div className="p-card-body">
+                <h3 className="p-name">From Verse to the Crowd: How Lyrics Shape an Artist's Cultural Journey</h3>
+                <a href="https://medium.com/@lalithalaharikarri/from-verse-to-the-crowd-how-lyrics-shape-an-artists-cultural-journey-736a859ac5aa" target="_blank" rel="noreferrer" className="p-read">Read More</a>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* ── Analytics & Data ── */}
+          <div className="portfolio-category" style={{ marginTop: '3.5rem' }}>Analytics &amp; Data</div>
           <div className="portfolio-grid">
             <motion.div className="p-card" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
               <img src={base + "housing.jpg"} alt="Housing Reviews" className="p-card-img" />
