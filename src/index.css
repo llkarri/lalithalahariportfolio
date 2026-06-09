@@ -145,7 +145,7 @@ body {
   display: flex;
   align-items: center;
   gap: 4rem;
-  padding: 4rem 6rem;
+  padding: 4rem clamp(1.5rem, 7vw, 6rem);
   justify-content: space-between;
 }
 .hero-text { flex: 1; }
@@ -582,9 +582,9 @@ hr.rule {
 /* ══ TABLET (max 1024px) ══ */
 @media (max-width: 1024px) {
   .top-nav { padding: 0 2rem; }
-  .section-hero { padding: 3rem 3rem; gap: 2.5rem; }
+  .section-hero { padding: 3rem 2.5rem; gap: 2.5rem; }
   .hero-photo-frame { width: 220px; height: 290px; }
-  section { padding-left: 3rem !important; padding-right: 3rem !important; }
+  section { padding-left: 2.5rem !important; padding-right: 2.5rem !important; }
   .about-grid { gap: 2.5rem; }
   .exp-row { grid-template-columns: 140px 1fr; gap: 1.5rem; }
   .contact-grid { gap: 3rem; }
