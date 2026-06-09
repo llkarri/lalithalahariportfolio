@@ -309,8 +309,7 @@ export default function App() {
                 I spent 3 years at Accenture as a Data Engineer and Business Intelligence Analyst, working across messy, high-stakes data problems that needed both technical precision and clear communication to solve. That experience taught me how to turn complexity into clarity — and how good data decisions only matter when they're connected to the right product decisions.
               </p>
               <p style={{ fontSize: '1rem', fontWeight: 300, color: MID, lineHeight: 1.95, marginBottom: '1.4rem' }}>
-                Now at UIUC Gies, I'm studying Business Analytics, coaching students as a Growth Coach, advocating for tech accessibility, and building a community of people navigating the same crossroads I once stood at: smart, technical, and figuring out how to make it in product.
-              </p>
+                My goal is to bridge the gap between data and product — bringing analytical rigor to product decisions and human-centered thinking to data problems. I thrive when both sides of that equation are on the table.
               <p style={{ fontSize: '1rem', fontWeight: 400, color: NAVY, lineHeight: 1.95, fontStyle: 'italic', borderLeft: `3px solid ${SKY}`, paddingLeft: '1.2rem' }}>
                 I believe the best products are built by people who speak both languages: data and design thinking. That's the space I live in.
               </p>
