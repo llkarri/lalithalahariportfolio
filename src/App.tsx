@@ -81,34 +81,34 @@ const PROJECTS = [
 
 const EXPERIENCE = [
   {
-    role: 'Data Analyst — Decision Support & Business Intelligence',
+    role: 'Data Analyst, Decision Support & Business Intelligence',
     org: 'University of Illinois Urbana-Champaign',
     sub: 'Office of the Provost · Champaign, IL',
     period: 'Jan 2026 – Present',
     bullets: [
-      'Manage reporting workflows across 20+ institutional partners for a program serving 55,000+ students.',
-      'Organize project documentation, track deliverable timelines, and maintain a structured knowledge base across complex multi-stakeholder reporting cycles.',
+      'Built and managed reporting workflows across 20+ institutional partners, bringing structure to a fragmented system tracking outcomes for 55,000+ students.',
+      'Designed a centralized knowledge base that kept complex multi-stakeholder reporting cycles on track and cut documentation search time across the team.',
     ],
   },
   {
-    role: 'Growth Coach — BUS 401',
+    role: 'Growth Coach, BUS 401',
     org: 'University of Illinois Urbana-Champaign',
     sub: 'Champaign, IL',
     period: '2025 – Present',
     bullets: [
-      'Lead "Growth Groups" — 30-min personalized small-group sessions (5–15 students) for BUS 401, covering course concepts and mutual peer support.',
-      'Coach students on career clarity, AI-integrated workflows, and productivity systems to turn chaotic job searches into organized, strategic processes.',
-      'Track student success metrics (attendance, grades), complete grading, develop discussion guides, and help organize course events.',
+      'Coached 5 to 15 students per weekly small-group session, turning scattered career anxiety into organized, strategic job search plans with real momentum.',
+      'Designed discussion guides and tracked attendance and grade trends that kept the program running smoothly and students on course across the full semester.',
     ],
   },
   {
     role: 'AI Productivity Coach & Content Creator',
-    org: '@lalithajournal — Instagram',
+    org: '@lalithajournal',
     sub: '5,000+ Community · Remote',
     period: '2025 – Present',
     bullets: [
-      'Built and grew a 5,000+ member community teaching Notion and AI workflows for academics and career growth.',
-      'Host weekly live coaching calls; created original Notion templates for academic planning, job tracking, and career development actively used across diverse student backgrounds.',
+      'Grew an Instagram community from 0 to 5,000+ by creating Notion templates and AI workflow content that made career navigation feel simple and actionable.',
+      'Completed 550+ coaching calls on Topmate, helping international students gain clarity on tech careers, visa timelines, and navigating life after graduation.',
+      'Host weekly group calls that break down complex career topics into clear, digestible frameworks students actually use.',
     ],
   },
   {
@@ -117,8 +117,8 @@ const EXPERIENCE = [
     sub: 'Champaign, IL',
     period: '2025 – Present',
     bullets: [
-      'Facilitate training workshops helping STEM faculty adopt AI and productivity tools for accessible, inclusive course design.',
-      'Build Notion workspaces for course planning and student-facing documentation — translating complex tools into structured, beginner-friendly systems.',
+      'Ran accessible AI workshops for STEM faculty, translating intimidating tools into beginner-friendly systems that instructors could adopt immediately.',
+      'Built Notion course workspaces that gave instructors one clear source of truth, eliminating the chaos of scattered course materials across multiple platforms.',
     ],
   },
   {
@@ -127,8 +127,8 @@ const EXPERIENCE = [
     sub: 'Bengaluru, India',
     period: 'Aug 2024 – Jul 2025',
     bullets: [
-      'Developed Tableau dashboards tracking key business metrics, supporting leadership decisions and saving $500K+ in identified costs.',
-      'Cleaned and analyzed 500K+ operational records at 99% accuracy; standardized data definitions, reducing reporting discrepancies by 40%.',
+      'Designed Tableau dashboards that surfaced $500K+ in cost opportunities and gave leadership a reliable view of business performance for the first time.',
+      'Validated and cleaned 500K+ operational records at 99% accuracy, cutting reporting discrepancies by 40% across the entire analytics team.',
     ],
   },
   {
@@ -137,9 +137,33 @@ const EXPERIENCE = [
     sub: 'Bengaluru, India',
     period: 'Aug 2022 – Jul 2024',
     bullets: [
-      'Designed SQL pipelines reducing analytics turnaround by 35%; automated data cleaning with Python, eliminating 90% of manual errors.',
-      'Led QlikView-to-Tableau migration for 700+ reports, achieving 99.9% data accuracy and cutting workflow time by 40%.',
+      'Rebuilt SQL pipelines from scratch, reducing analytics turnaround by 35% and ending the weekly scramble for clean, query-ready data.',
+      'Led a full migration of 700+ reports from QlikView to Tableau, achieving 99.9% accuracy and cutting manual workflow overhead by 40%.',
     ],
+  },
+] as const;
+
+const AWARDS = [
+  {
+    title: '1st Place — CPRBS Case Competition',
+    org: 'University of Illinois Urbana-Champaign',
+    year: '2025',
+    desc: 'Led a cross-functional team of 5 to redesign a 0% adoption sustainability dashboard into an AI-powered platform. Pitched to a panel of industry judges and won first place.',
+    icon: '🏆',
+  },
+  {
+    title: 'Best Project & Best Speaker Award',
+    org: 'University of Illinois Urbana-Champaign',
+    year: '2025',
+    desc: 'Scored 83/84 for the SomnoMask product concept — recognized for both the quality of the product case and the strength of the investor pitch delivery.',
+    icon: '🎤',
+  },
+  {
+    title: 'Pinnacle Award — Best Employee Recognition',
+    org: 'Accenture',
+    year: '2024',
+    desc: 'Recognized for exceptional performance and impact on client data quality initiatives, awarded among top performers across the analytics team.',
+    icon: '⭐',
   },
 ] as const;
 
@@ -181,7 +205,7 @@ export default function App() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.55 } },
   };
 
-  const navLinks = ['About', 'Projects', 'Experience', 'Education', 'Contact'];
+  const navLinks = ['About', 'Projects', 'Experience', 'Awards', 'Education', 'Contact'];
 
   return (
     <div style={{ fontFamily: 'var(--sans)', background: '#fff', color: INK, overflowX: 'hidden' }}>
@@ -242,7 +266,7 @@ export default function App() {
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <a href="#projects" className="btn-primary">View My Work</a>
-              <a href={`${BASE}resume.pdf`} download className="btn-outline">Download Resume</a>
+              <a href="#contact" className="btn-outline">Let's Connect</a>
             </div>
           </motion.div>
 
@@ -254,7 +278,7 @@ export default function App() {
         </section>
 
         {/* ── ABOUT ── */}
-        <section id="about" style={{ background: LIGHT_BG, padding: '5rem 6rem' }}>
+        <section id="about" style={{ background: 'linear-gradient(135deg, #eef4fb 0%, #f5f8ff 40%, #fdf0ec 100%)', padding: '5rem clamp(1.5rem, 7vw, 6rem)' }}>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
             <p className="eyebrow">About Me</p>
             <h2 className="section-title">Analyst. Builder. <em>Community Maker.</em></h2>
@@ -262,13 +286,13 @@ export default function App() {
             <div className="about-grid">
               <div>
                 <p style={{ fontSize: '0.92rem', fontWeight: 300, color: MID, lineHeight: 1.9, marginBottom: '1.1rem' }}>
-                  I started in engineering, moved into data at Accenture where I spent 3 years turning 500K+ messy records into dashboards that saved $500K+ — and somewhere along the way I realized I was more excited about <em>why</em> a product existed than how its data flowed.
+                  I started in engineering, moved into data at Accenture where I spent 3 years turning 500K+ messy records into dashboards that saved $500K+. Somewhere along the way I realized I was more excited about <em>why</em> a product existed than how its data flowed.
                 </p>
                 <p style={{ fontSize: '0.92rem', fontWeight: 300, color: MID, lineHeight: 1.9, marginBottom: '1.1rem' }}>
                   Now at UIUC Gies, I'm a Growth Coach, a Global Educator, and building a 5,000+ community that teaches real students how to navigate careers with AI and intentionality. My projects span product strategy, analytics, and everything in between.
                 </p>
-                <p style={{ fontSize: '0.92rem', fontWeight: 300, color: MID, lineHeight: 1.9 }}>
-                  I believe the best products are built by people who speak both languages — data and design thinking. That's the space I live in.
+                <p style={{ fontSize: '0.92rem', fontWeight: 400, color: NAVY, lineHeight: 1.9, fontStyle: 'italic' }}>
+                  I believe the best products are built by people who speak both languages: data and design thinking. That's the space I live in.
                 </p>
                 <div style={{ display: 'flex', gap: '1.2rem', marginTop: '2rem', alignItems: 'center' }}>
                   <div className="logo-box" style={{ height: '52px', width: '80px' }}>
@@ -297,10 +321,10 @@ export default function App() {
         </section>
 
         {/* ── PROJECTS ── */}
-        <section id="projects" style={{ padding: '5rem 6rem' }}>
+        <section id="projects" style={{ padding: '5rem clamp(1.5rem, 7vw, 6rem)' }}>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
             <p className="eyebrow">Selected Work</p>
-            <h2 className="section-title">Projects that <em>shipped ideas.</em></h2>
+            <h2 className="section-title">Projects that <em>shipped.</em></h2>
             <hr className="rule" />
             <p style={{ fontSize: '0.88rem', fontWeight: 300, color: MID, marginBottom: '2rem', maxWidth: '560px', lineHeight: 1.75 }}>
               From product case studies to data analysis — each project is published on Medium. Click any card to read the full write-up.
@@ -359,7 +383,7 @@ export default function App() {
         </section>
 
         {/* ── EXPERIENCE ── */}
-        <section id="experience" style={{ background: LIGHT_BG, padding: '5rem 6rem' }}>
+        <section id="experience" style={{ background: LIGHT_BG, padding: '5rem clamp(1.5rem, 7vw, 6rem)' }}>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
             <p className="eyebrow">Experience</p>
             <h2 className="section-title">How I've made an <em>impact.</em></h2>
@@ -397,8 +421,69 @@ export default function App() {
           </motion.div>
         </section>
 
+        {/* ── AWARDS ── */}
+        <section id="awards" style={{ padding: '5rem clamp(1.5rem, 7vw, 6rem)' }}>
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+            <p className="eyebrow">Recognition</p>
+            <h2 className="section-title">Awards &amp; <em>Achievements.</em></h2>
+            <hr className="rule" />
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem', maxWidth: '780px' }}>
+              {AWARDS.map((award, i) => (
+                <motion.div
+                  key={award.title}
+                  initial={{ opacity: 0, x: -16 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.08 }}
+                  style={{
+                    display: 'flex',
+                    gap: '1.4rem',
+                    alignItems: 'flex-start',
+                    background: '#fff',
+                    border: `1px solid ${BORDER}`,
+                    borderRadius: '1rem',
+                    padding: '1.6rem 1.8rem',
+                    boxShadow: '0 1px 4px rgba(0,0,0,0.04)',
+                  }}
+                >
+                  <div style={{
+                    fontSize: '1.5rem',
+                    lineHeight: 1,
+                    flexShrink: 0,
+                    width: '48px',
+                    height: '48px',
+                    background: '#eef2ff',
+                    borderRadius: '0.75rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}>
+                    {award.icon}
+                  </div>
+                  <div style={{ flex: 1 }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem', flexWrap: 'wrap' }}>
+                      <h3 style={{ fontFamily: 'var(--serif)', fontSize: '1.05rem', fontWeight: 600, color: INK, lineHeight: 1.3 }}>
+                        {award.title}
+                      </h3>
+                      <span style={{ fontSize: '0.62rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: SKY, fontWeight: 500, whiteSpace: 'nowrap' }}>
+                        {award.year}
+                      </span>
+                    </div>
+                    <p style={{ fontSize: '0.68rem', color: MUTED, marginTop: '0.2rem', marginBottom: '0.6rem', letterSpacing: '0.04em' }}>
+                      {award.org}
+                    </p>
+                    <p style={{ fontSize: '0.8rem', fontWeight: 300, color: MID, lineHeight: 1.7 }}>
+                      {award.desc}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </section>
+
         {/* ── EDUCATION ── */}
-        <section id="education" style={{ padding: '5rem 6rem' }}>
+        <section id="education" style={{ padding: '5rem clamp(1.5rem, 7vw, 6rem)' }}>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
             <p className="eyebrow">Education</p>
             <h2 className="section-title">Where I built my <em>foundation.</em></h2>
@@ -442,13 +527,19 @@ export default function App() {
         </section>
 
         {/* ── OUTSIDE ── */}
-        <section style={{ background: LIGHT_BG, padding: '4.5rem 6rem' }}>
+        <section style={{ background: LIGHT_BG, padding: '4.5rem clamp(1.5rem, 7vw, 6rem)' }}>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
             <p className="eyebrow">Beyond Work</p>
             <h2 className="section-title">Community, creativity, <em>and travel.</em></h2>
             <hr className="rule" />
-            <p style={{ fontSize: '0.9rem', fontWeight: 300, color: MID, lineHeight: 1.85, maxWidth: '600px', marginBottom: '2.5rem' }}>
-              I run <strong style={{ color: INK, fontWeight: 500 }}>@lalithajournal</strong> on Instagram — a community of <strong style={{ color: INK, fontWeight: 500 }}>5,000+ people</strong> navigating analytics and product careers. Also a <strong style={{ color: INK, fontWeight: 500 }}>Global Educator</strong> with ISSS at UIUC, representing my country and supporting international students.
+            <p style={{ fontSize: '0.9rem', fontWeight: 300, color: MID, lineHeight: 1.85, maxWidth: '620px', marginBottom: '1.4rem' }}>
+              I run <strong style={{ color: INK, fontWeight: 500 }}>@lalithajournal</strong> on Instagram, a community of <strong style={{ color: INK, fontWeight: 500 }}>5,000+ people</strong> navigating analytics and product careers. I host weekly calls to simplify topics that feel overwhelming, from PM fundamentals to figuring out life in tech.
+            </p>
+            <p style={{ fontSize: '0.9rem', fontWeight: 300, color: MID, lineHeight: 1.85, maxWidth: '620px', marginBottom: '1.4rem' }}>
+              I've completed <strong style={{ color: INK, fontWeight: 500 }}>550+ 1:1 coaching calls on Topmate</strong>, helping international students gain clarity on tech careers, understand the US job market, and build a future they actually want.
+            </p>
+            <p style={{ fontSize: '0.9rem', fontWeight: 300, color: MID, lineHeight: 1.85, maxWidth: '620px', marginBottom: '2.5rem' }}>
+              Also a <strong style={{ color: INK, fontWeight: 500 }}>Global Educator</strong> with ISSS at UIUC, representing my country and supporting students who are figuring out the world far from home.
             </p>
             <div className="outside-grid">
               <motion.div className="o-card" whileHover={{ y: -5 }} transition={{ duration: 0.2 }}>
@@ -475,7 +566,7 @@ export default function App() {
       </main>
 
       {/* ── FOOTER / CONTACT ── */}
-      <footer id="contact" style={{ background: NAVY, padding: '5rem 6rem 3rem' }}>
+      <footer id="contact" style={{ background: NAVY, padding: '5rem clamp(1.5rem, 7vw, 6rem) 3rem' }}>
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <p className="eyebrow" style={{ color: 'var(--sky-l)' }}>Get In Touch</p>
           <h2 className="section-title" style={{ color: '#fff' }}>
