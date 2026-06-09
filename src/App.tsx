@@ -421,11 +421,8 @@ export default function App() {
                   transition={{ duration: 0.45, delay: i * 0.07 }}
                 >
                   {/* Logo circle */}
-                  <div className="tl-logo" style={{ background: exp.logoImg ? '#fff' : exp.logoBg }}>
-                    {exp.logoImg
-                      ? <img src={`${BASE}${exp.logoImg}`} alt={exp.org} style={{ width: '100%', height: '100%', objectFit: 'contain', padding: '6px' }} />
-                      : <span style={{ color: '#fff', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.03em' }}>{exp.logoInitials}</span>
-                    }
+                  <div className="tl-logo" style={{ background: exp.logoBg }}>
+                    <span style={{ color: '#fff', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.03em' }}>{exp.logoInitials}</span>
                   </div>
 
                   {/* Card */}
