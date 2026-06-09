@@ -540,6 +540,9 @@ export default function App() {
             <p style={{ fontSize: '0.9rem', fontWeight: 300, color: MID, lineHeight: 1.85, maxWidth: '620px', marginBottom: '1.4rem' }}>
               I've completed <strong style={{ color: INK, fontWeight: 500 }}>550+ coaching sessions on Topmate</strong>, earned <strong style={{ color: INK, fontWeight: 500 }}>Top 0.1% Expert</strong> status, and host weekly group calls breaking down PM, careers, and AI for international students navigating the US job market. The community is the product. The 550 calls are the user research.
             </p>
+            <p style={{ fontSize: '0.9rem', fontWeight: 300, color: MID, lineHeight: 1.85, maxWidth: '620px', marginBottom: '1.4rem' }}>
+              I also volunteer with <strong style={{ color: INK, fontWeight: 500 }}>ISSS at UIUC</strong> as a cultural representative, facilitating events that give international students a space to share their stories, celebrate their backgrounds, and feel less alone in a new country.
+            </p>
             <p style={{ fontSize: '0.9rem', fontWeight: 300, color: MID, lineHeight: 1.85, maxWidth: '620px', marginBottom: '2.5rem' }}>
               Outside of that, I travel, explore new places, and stay curious about the world beyond the screen.
             </p>
