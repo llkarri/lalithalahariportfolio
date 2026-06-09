@@ -1,0 +1,21 @@
+/* ══ PORTFOLIO SECTIONS (add these to the bottom of index.css) ══ */
+
+.portfolio-category {
+  font-size: .58rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+  padding-bottom: .75rem;
+  border-bottom: 1px solid var(--light);
+  margin-bottom: 1.5rem;
+}
+
+.p-award {
+  display: block;
+  font-size: .62rem;
+  font-weight: 600;
+  color: var(--coral);
+  letter-spacing: .03em;
+  margin-bottom: .35rem;
+}
