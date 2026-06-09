@@ -394,32 +394,42 @@ export default function App() {
             <p className="eyebrow">Experience</p>
             <h2 className="section-title">How I've made an <em>impact.</em></h2>
             <hr className="rule" />
-            <div className="tl-wrap">
-              <div className="tl-line" />
+            <div style={{ maxWidth: '780px' }}>
               {EXPERIENCE.map((exp, i) => (
                 <motion.div
                   key={exp.role + exp.period}
-                  className="tl-item"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.45, delay: i * 0.07 }}
+                  transition={{ duration: 0.4, delay: i * 0.07 }}
+                  style={{ display: 'flex', gap: '1.2rem', alignItems: 'stretch', marginBottom: '1rem' }}
                 >
-                  {/* Logo circle */}
-                  <div className="tl-logo" style={{ background: exp.logoBg }}>
-                    <span style={{ color: '#fff', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.03em' }}>{exp.logoInitials}</span>
+                  {/* Left: circle + connector */}
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flexShrink: 0, width: '48px' }}>
+                    <div style={{
+                      width: '48px', height: '48px', borderRadius: '50%',
+                      background: exp.logoBg, display: 'flex', alignItems: 'center',
+                      justifyContent: 'center', flexShrink: 0,
+                      border: '2px solid #e2e8f0', boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                    }}>
+                      <span style={{ color: '#fff', fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.03em' }}>{exp.logoInitials}</span>
+                    </div>
+                    {i < EXPERIENCE.length - 1 && (
+                      <div style={{ width: '2px', flex: 1, minHeight: '1.5rem', marginTop: '4px', background: 'linear-gradient(to bottom, #2f6bba44, #a8cbee44)' }} />
+                    )}
                   </div>
 
-                  {/* Card */}
-                  <div className="tl-card">
-                    <div className="tl-card-header">
-                      <div>
-                        <h3 style={{ fontFamily: 'var(--serif)', fontSize: '1.1rem', fontWeight: 600, color: INK, lineHeight: 1.25, marginBottom: '0.2rem' }}>{exp.org}</h3>
-                        <p style={{ fontSize: '0.78rem', color: MUTED, marginBottom: '0.15rem' }}>{exp.role}</p>
-                        <p style={{ fontSize: '0.62rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: SKY, fontWeight: 500 }}>{exp.period} · {exp.sub}</p>
-                      </div>
-                    </div>
-                    <ul style={{ listStyle: 'none', padding: 0, marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.55rem' }}>
+                  {/* Right: card */}
+                  <div style={{
+                    flex: 1, background: '#fff', border: '1px solid #e2e8f0',
+                    borderRadius: '1rem', padding: '1.4rem 1.6rem',
+                    boxShadow: '0 1px 4px rgba(0,0,0,0.04)',
+                    transition: 'box-shadow 0.2s',
+                  }}>
+                    <h3 style={{ fontFamily: 'var(--serif)', fontSize: '1.1rem', fontWeight: 600, color: INK, lineHeight: 1.25, marginBottom: '0.2rem' }}>{exp.org}</h3>
+                    <p style={{ fontSize: '0.78rem', color: MUTED, marginBottom: '0.15rem' }}>{exp.role}</p>
+                    <p style={{ fontSize: '0.62rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: SKY, fontWeight: 500, marginBottom: '1rem' }}>{exp.period} · {exp.sub}</p>
+                    <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                       {exp.bullets.map((b, bi) => (
                         <li key={bi} style={{ fontSize: '0.8rem', fontWeight: 300, color: MID, lineHeight: 1.75, paddingLeft: '1rem', position: 'relative' }}>
                           <span style={{ position: 'absolute', left: 0, color: INDIGO, fontWeight: 600 }}>›</span>
