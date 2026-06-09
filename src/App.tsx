@@ -85,7 +85,7 @@ const EXPERIENCE = [
     org: 'University of Illinois Urbana-Champaign',
     sub: 'Office of the Provost · Champaign, IL',
     period: 'Jan 2026 – May 2026',
-    logoImg: null,
+    logoImg: 'uiuc.jpg',
     logoInitials: 'UI',
     logoBg: '#e8700a',
     bullets: [
@@ -94,25 +94,11 @@ const EXPERIENCE = [
     ],
   },
   {
-    role: 'AI Productivity Coach & Content Creator',
-    org: '@lalithajournal',
-    sub: '5,000+ Community · Remote',
-    period: '2025 – Present',
-    logoImg: null,
-    logoInitials: 'LJ',
-    logoBg: '#e07654',
-    bullets: [
-      'Built a 5,000+ member community from zero by creating Notion templates and AI workflow content that simplifies career navigation for analytics and product students across 15+ countries.',
-      'Completed 550+ 1:1 coaching sessions on Topmate, earning Top 0.1% Expert status alongside Host Worthy, Community Care, and People\'s Choice badges, ranked among the top coaches on the platform.',
-      'Host weekly group sessions breaking down PM fundamentals, visa-to-career transitions, and AI productivity for international students navigating the US job market.',
-    ],
-  },
-  {
     role: 'Tech Accessibility Advocate',
-    org: 'UIUC, ISSS',
-    sub: 'Champaign, IL',
+    org: 'University of Illinois Urbana-Champaign',
+    sub: 'ISSS · Champaign, IL',
     period: '2025 – Present',
-    logoImg: null,
+    logoImg: 'uiuc.jpg',
     logoInitials: 'UI',
     logoBg: '#e8700a',
     bullets: [
@@ -125,7 +111,7 @@ const EXPERIENCE = [
     org: 'Accenture',
     sub: 'Bengaluru, India',
     period: 'Aug 2024 – Jul 2025',
-    logoImg: null,
+    logoImg: 'accenture.jpg',
     logoInitials: 'AC',
     logoBg: '#a100ff',
     bullets: [
@@ -139,7 +125,7 @@ const EXPERIENCE = [
     org: 'Accenture',
     sub: 'Bengaluru, India',
     period: 'Aug 2022 – Jul 2024',
-    logoImg: null,
+    logoImg: 'accenture.jpg',
     logoInitials: 'AC',
     logoBg: '#a100ff',
     bullets: [
@@ -396,11 +382,16 @@ export default function App() {
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flexShrink: 0, width: '48px' }}>
                     <div style={{
                       width: '48px', height: '48px', borderRadius: '50%',
-                      background: exp.logoBg, display: 'flex', alignItems: 'center',
-                      justifyContent: 'center', flexShrink: 0,
+                      background: exp.logoImg ? '#fff' : exp.logoBg,
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      flexShrink: 0, overflow: 'hidden',
                       border: '2px solid #e2e8f0', boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
                     }}>
-                      <span style={{ color: '#fff', fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.03em' }}>{exp.logoInitials}</span>
+                      {exp.logoImg
+                        ? <img src={`${BASE}${exp.logoImg}`} alt={exp.org}
+                            style={{ width: '34px', height: '34px', objectFit: 'contain', display: 'block' }} />
+                        : <span style={{ color: '#fff', fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.03em' }}>{exp.logoInitials}</span>
+                      }
                     </div>
                     {i < EXPERIENCE.length - 1 && (
                       <div style={{ width: '2px', flex: 1, minHeight: '1.5rem', marginTop: '4px', background: 'linear-gradient(to bottom, #2f6bba44, #a8cbee44)' }} />
