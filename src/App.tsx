@@ -85,25 +85,12 @@ const EXPERIENCE = [
     org: 'University of Illinois Urbana-Champaign',
     sub: 'Office of the Provost · Champaign, IL',
     period: 'Jan 2026 – May 2026',
-    logoImg: 'uiuc.jpg',
+    logoImg: null,
     logoInitials: 'UI',
     logoBg: '#e8700a',
     bullets: [
-      'Developed a Student Success Scorecard in Tableau, giving deans and academic officers a real-time view of student outcomes across 55,000+ records.',
-      'Built and maintained reporting workflows across 20+ institutional partners, bringing structure and consistency to a fragmented data ecosystem.',
-    ],
-  },
-  {
-    role: 'Growth Coach, BUS 401',
-    org: 'University of Illinois Urbana-Champaign',
-    sub: 'Champaign, IL',
-    period: '2026 – Present',
-    logoImg: 'uiuc.jpg',
-    logoInitials: 'UI',
-    logoBg: '#e8700a',
-    bullets: [
-      'Coached 5 to 15 students per weekly small-group session, turning scattered career anxiety into organized, strategic job search plans with real momentum.',
-      'Designed discussion guides and tracked attendance and grade trends that kept the program running smoothly and students on course across the full semester.',
+      'Collaborated with the Office of the Provost to design a Student Success Scorecard in Tableau, tracking 6 KPI categories across enrollment, retention, equity, and completion for 55,000+ undergraduates across 15 colleges.',
+      'Authored SQL queries against Banner ERP to build equity-disaggregated drill-down views by race, first-generation, and Pell Grant status, giving deans and institutional leadership a self-service lens for targeted student intervention strategy.',
     ],
   },
   {
@@ -115,9 +102,9 @@ const EXPERIENCE = [
     logoInitials: 'LJ',
     logoBg: '#e07654',
     bullets: [
-      'Grew an Instagram community from 0 to 5,000+ by creating Notion templates and AI workflow content that made career navigation feel simple and actionable.',
-      'Completed 550+ coaching calls on Topmate, helping international students gain clarity on tech careers, visa timelines, and navigating life after graduation.',
-      'Host weekly group calls that break down complex career topics into clear, digestible frameworks students actually use.',
+      'Built a 5,000+ member community from zero by creating Notion templates and AI workflow content that simplifies career navigation for analytics and product students across 15+ countries.',
+      'Completed 550+ 1:1 coaching sessions on Topmate, earning Top 0.1% Expert status alongside Host Worthy, Community Care, and People\'s Choice badges, ranked among the top coaches on the platform.',
+      'Host weekly group sessions breaking down PM fundamentals, visa-to-career transitions, and AI productivity for international students navigating the US job market.',
     ],
   },
   {
@@ -125,12 +112,12 @@ const EXPERIENCE = [
     org: 'UIUC, ISSS',
     sub: 'Champaign, IL',
     period: '2025 – Present',
-    logoImg: 'uiuc.jpg',
+    logoImg: null,
     logoInitials: 'UI',
     logoBg: '#e8700a',
     bullets: [
-      'Ran accessible AI workshops for STEM faculty, translating intimidating tools into beginner-friendly systems that instructors could adopt immediately.',
-      'Built Notion course workspaces that gave instructors one clear source of truth, eliminating the chaos of scattered course materials across multiple platforms.',
+      'Designed and delivered AI and productivity workshops for STEM faculty, translating tools like Notion and ChatGPT into structured, beginner-friendly systems adopted for course planning.',
+      'Built Notion course workspaces that gave instructors one clear source of truth, eliminating scattered course materials across multiple platforms.',
     ],
   },
   {
@@ -138,25 +125,26 @@ const EXPERIENCE = [
     org: 'Accenture',
     sub: 'Bengaluru, India',
     period: 'Aug 2024 – Jul 2025',
-    logoImg: 'accenture.jpg',
+    logoImg: null,
     logoInitials: 'AC',
     logoBg: '#a100ff',
     bullets: [
-      'Designed Tableau dashboards that surfaced $500K+ in cost opportunities and gave leadership a reliable view of business performance for the first time.',
-      'Validated and cleaned 500K+ operational records at 99% accuracy, cutting reporting discrepancies by 40% across the entire analytics team.',
+      'Diagnosed root cause of data fragmentation across an energy client\'s BI environment; led consolidation of QlikView and Tableau into a unified platform serving 200+ users with real-time operational visibility.',
+      'Identified $34K annual bottleneck in legal contract processing; designed a DocuSign automation pipeline that cut contract turnaround from 7 days to same-day through automated regional routing.',
+      'Defined data governance standards for 15+ enterprise reports and built a centralized metadata repository, achieving 100% compliance readiness and cutting analyst onboarding time by 60%.',
     ],
   },
   {
-    role: 'Data Engineer Associate',
+    role: 'Data Engineering Associate',
     org: 'Accenture',
     sub: 'Bengaluru, India',
     period: 'Aug 2022 – Jul 2024',
-    logoImg: 'accenture.jpg',
+    logoImg: null,
     logoInitials: 'AC',
     logoBg: '#a100ff',
     bullets: [
-      'Rebuilt SQL pipelines from scratch, reducing analytics turnaround by 35% and ending the weekly scramble for clean, query-ready data.',
-      'Led a full migration of 700+ reports from QlikView to Tableau, achieving 99.9% accuracy and cutting manual workflow overhead by 40%.',
+      'Led cross-unit data standardization across 4 business units, validating 500K+ records at 99% accuracy to build reliable reporting infrastructure for enterprise BI systems.',
+      'Diagnosed a 7-day support resolution bottleneck affecting 50+ users; designed a training and self-service documentation initiative that reduced resolution time by 80%.',
     ],
   },
 ] as const;
@@ -556,13 +544,13 @@ export default function App() {
             <h2 className="section-title">Community, creativity, <em>and travel.</em></h2>
             <hr className="rule" />
             <p style={{ fontSize: '0.9rem', fontWeight: 300, color: MID, lineHeight: 1.85, maxWidth: '620px', marginBottom: '1.4rem' }}>
-              I run <strong style={{ color: INK, fontWeight: 500 }}>@lalithajournal</strong> on Instagram, a community of <strong style={{ color: INK, fontWeight: 500 }}>5,000+ people</strong> navigating analytics and product careers. I host weekly calls to simplify topics that feel overwhelming, from PM fundamentals to figuring out life in tech.
+              I built <strong style={{ color: INK, fontWeight: 500 }}>@lalithajournal</strong> from zero into a <strong style={{ color: INK, fontWeight: 500 }}>5,000+ member community</strong> for analytics and product students, without a budget, a team, or a job title. Just a real gap, and a decision to fill it.
             </p>
             <p style={{ fontSize: '0.9rem', fontWeight: 300, color: MID, lineHeight: 1.85, maxWidth: '620px', marginBottom: '1.4rem' }}>
-              I've completed <strong style={{ color: INK, fontWeight: 500 }}>550+ 1:1 coaching calls on Topmate</strong>, helping international students gain clarity on tech careers, understand the US job market, and build a future they actually want.
+              I've completed <strong style={{ color: INK, fontWeight: 500 }}>550+ coaching sessions on Topmate</strong>, earned <strong style={{ color: INK, fontWeight: 500 }}>Top 0.1% Expert</strong> status, and host weekly group calls breaking down PM, careers, and AI for international students navigating the US job market. The community is the product. The 550 calls are the user research.
             </p>
             <p style={{ fontSize: '0.9rem', fontWeight: 300, color: MID, lineHeight: 1.85, maxWidth: '620px', marginBottom: '2.5rem' }}>
-              Also a <strong style={{ color: INK, fontWeight: 500 }}>Global Educator</strong> with ISSS at UIUC, representing my country and supporting students who are figuring out the world far from home.
+              Outside of that, I travel, explore new places, and stay curious about the world beyond the screen.
             </p>
             <div className="outside-grid">
               <motion.div className="o-card" whileHover={{ y: -5 }} transition={{ duration: 0.2 }}>
